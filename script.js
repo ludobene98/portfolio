@@ -4,7 +4,7 @@ const intro = "Hi, my name is Ludovica.";
 const phrases = [
   "Creative Developer",
   "Science Enthusiast",
-  "Astrophotography Lover"
+  "Sketch & Design Lover"
 ];
 
 let introFinished = false;
