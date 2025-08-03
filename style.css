@@ -1,0 +1,579 @@
+/* RESET BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Inter', sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* VARIABILI LIGHT MODE */
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --nav-bg: url('img/navbar-background.jpg');
+  --link-color: white;
+  --link-shadow: 1px 1px 2px black;
+  --footer-color: #555;
+}
+
+/* APPLICAZIONE VARIABILI */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+nav.nav {
+  background-image: var(--nav-bg);
+}
+
+nav ul li a,
+nav .logo,
+.theme-toggle label {
+  color: var(--link-color);
+  text-shadow: var(--link-shadow);
+}
+
+.footer {
+  color: var(--footer-color);
+}
+
+/* NAVBAR */
+nav.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border-bottom: 2px solid white;
+  z-index: 100;
+}
+
+nav .logo {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 30px;
+  position: relative;
+}
+
+/* Linea viola animata */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: purple;
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+/* TOGGLE DARK MODE */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.theme-toggle input {
+  appearance: none;
+  width: 50px;
+  height: 26px;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.theme-toggle input::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.theme-toggle input:checked {
+  background: #6C5B7B;
+}
+
+.theme-toggle input:checked::before {
+  transform: translateX(24px);
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background-image: url('img/background-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* SEZIONI */
+.section {
+  min-height: 100vh;
+  padding: 6rem 2rem 2rem;
+  scroll-snap-align: start;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+#project-list {
+  margin-top: 2rem;
+}
+
+/* ABout me section */
+.timeline {
+  position: relative;
+  margin: 4rem auto;
+  padding-left: 42px;
+  max-width: 800px;
+  /*aggiunta per git branch*/
+  position: relative;
+  overflow: visible; /* permetti al contenuto (tipo svg) di uscire */
+  z-index: 1;
+}
+
+.timeline .entry {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline .dot {
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #6C5B7B;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0 0 4px white;
+}
+
+.timeline .content {
+  background: rgba(255,255,255,0.7);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+.timeline .content h3 {
+  margin-bottom: 0.2rem;
+}
+
+.timeline .content span {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 4px;
+  height: 0;
+  background: #6C5B7B;
+  transition: height 3.5s ease-out;
+  z-index: 0;
+}
+
+.timeline.visible::before {
+  height: 100%;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 70px; /* aumentato */
+}
+
+.timeline-icon {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 4px solid #6C5B7B;
+  z-index: 2;
+}
+
+/* zoom effect for each entry*/
+.entry {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.entry.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* git branch section */
+/* Entry su ramo secondario a destra */
+.timeline .entry.right {
+  margin-left: 120px; /* sposta tutto verso destra */
+}
+
+.timeline .entry.right .dot {
+  left: -40px; /* mantiene il pallino sulla linea */
+}
+
+.timeline .entry.right .content {
+  background: rgba(255,255,255,0.85);
+}
+
+.dot {
+  position: relative;
+  z-index: 2; /* per stare sopra alla linea */
+  border: 2px solid purple
+}
+
+.dynamic-branch path {
+  transition: d 0.8s ease-in-out;
+}
+
+.dynamic-branch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animazione curva disegnata */
+.branch-anim {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 1.5s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+#timeline{
+  position: relative;
+}
+
+/*
+.branch-curve {
+  position: absolute;
+  left: 0; 
+  top: 120px; 
+  z-index: 1;
+  pointer-events: none;
+}
+*/
+/* Tema dark */
+body.dark .timeline {
+  border-color: #BFA2DB;
+}
+
+body.dark .timeline .dot {
+  background-color: #BFA2DB;
+  box-shadow: 0 0 0 4px #121212;
+}
+
+body.dark .timeline .content {
+  background: rgba(0,0,0,0.6);
+  color: #eee;
+}
+
+body.dark .timeline .entry.right .content {
+  background: rgba(0, 0, 0, 0.6);
+  color: #eee;
+}
+
+body.dark .timeline .entry.right .dot {
+  background-color: #BFA2DB;
+  box-shadow: 0 0 0 4px #121212;
+  color: white;
+}
+
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+/* COLORI SEZIONI LIGHT */
+#about {
+  background-color: #E6DAF5;
+}
+
+#projects {
+  background-color: #BFA2DB;
+}
+
+#contact {
+  background-color: #6C5B7B;
+  color: #ffffff;
+}
+
+/* ANIMAZIONI */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cursore lampeggiante */
+#typewriter::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Fade-in per parole */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/*animazione particelle*/
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.hero {
+  position: relative;
+  z-index: 1; /* sopra le particelle */
+}
+
+/* COntact form */
+/* Sezione inizialmente nascosta con reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Form styling */
+.click-to-copy {
+  color: #a564d9;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.click-to-copy:hover {
+  color: #bfa9d0;
+  text-decoration: underline;
+}
+
+.copied-msg {
+  margin-left: 1rem;
+  color: #4dabf7;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.copied-msg.visible {
+  opacity: 1;
+}
+
+
+/* --------------------------------------------- */
+/* TEMA DARK — SOLO QUI SOTTO 🌓 */
+/* --------------------------------------------- */
+body.dark {
+  --bg-color: #121212;
+  --text-color: #eeeeee;
+  --nav-bg: url('img/navbar-background.jpg'); /* stessa immagine */
+  --link-color: #eeeeee;
+  --link-shadow: none;
+  --footer-color: #bbb;
+}
+
+/* Sezioni in dark (opzionali) */
+body.dark #about {
+  background-color: #2c1f3c;
+}
+
+body.dark #projects {
+  background-color: #3a2e4d;
+}
+
+body.dark #contact {
+  background-color: #221632;
+}
+
+/* Overlay nero per scurire immagine hero */
+body.dark .hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* livello di oscuramento */
+  z-index: 0;
+}
+
+/* Overlay nero per navbar */
+body.dark nav.nav::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Assicura che contenuto resti sopra */
+.hero > *,
+nav.nav > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/*MOBILE RESPONSIVE*/
+@media screen and (max-width: 768px) {
+  .timeline {
+    padding: 1rem;
+    margin-left: 1rem;
+    border-left: 2px solid #ccc;
+  }
+
+  .timeline .entry {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+
+  .timeline .entry.right {
+    margin-left: 0;
+  }
+
+  .timeline .entry .dot {
+    left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline .entry.right .dot {
+    left: 0;
+  }
+
+  .timeline .entry .content {
+    margin-left: 2rem;
+    width: 100%;
+  }
+
+  h1, h2, h3, p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  #contact a.email-highlight {
+    font-size: 1rem;
+  }
+}

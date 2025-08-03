@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ludovica – Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+<nav class="nav">
+  <div class="logo">Personal Portfolio</div>
+  <ul>
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" id="theme-icon">☀️</label>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<div id="particles-js"></div>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1><span id="typewriter"></span></h1>
+      <p>Creative developer and science enthusiast</p>
+    </div>
+  </section>
+
+  <section id="about" class="section snap">
+    <h2 class="reveal">About Me</h2>
+    <p class="reveal">I build beautiful and useful digital tools. I combine creativity with logic, believe in clean code, clear interfaces, and continuous learning.</p>
+    <section id="timeline" class="section snap">
+  <h2 class="reveal">Education & Work Experience</h2>
+  <div class="timeline">
+    <!--Education-->
+      <div class="entry reveal">
+      <div class="dot" id="dot1">🎓</div>
+      <div class="content">
+        <h3>Master in Particle Physics</h3>
+        <span>2020 – 2022</span>
+        <p>University of Cagliari – Focus on precision mass measurements. Graduated with honors.</p>
+      </div>
+    </div> 
+
+    <!---Git branch section-->
+    <div class="entry right reveal">
+      <div class="dot" id="dot2">⚛️</div>
+      <div class="content">
+        <h3>Nuclear Physics Internship</h3>
+        <span>2021 – 2022</span>
+        <p>University of Groningen - focus on detection of exotic ions.</p>
+      </div>
+    </div>
+
+    <div class="entry right reveal">
+      <div class="dot" id="dot2">👩‍🏫</div>
+      <div class="content">
+        <h3>Teaching qualification</h3>
+        <span>2022</span>
+        <p>University of Cagliari - psychology, pedagogy, anthropology, teaching methodologies.</p>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="dot">💼</div>
+      <div class="content">
+        <h3>Software Engineer</h3>
+        <span>2022 – 2023</span>
+        <p>Testing electric vehicle ECUs – Turin, Italy.</p>
+      </div>
+    </div>
+
+    <div class="entry right reveal">
+      <div class="dot" id="dot2">💻</div>
+      <div class="content">
+        <h3>Research Fellow for DP4DD project</h3>
+        <span>2023</span>
+        <p>University of Cagliari - focus on developing a responsive website with a NoSQL protein database.</p>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="dot" id="dot3">🎓</div>
+      <div class="content">
+        <h3>Master in Electrical Engineering</h3>
+        <span>2023 – 2024</span>
+        <p>University of Cagliari – Focus on power systems and smart grids.</p>
+      </div>
+    </div>
+
+    <div class="entry reveal">
+      <div class="dot">💼</div>
+      <div class="content">
+        <h3>Software Engineer and Front-end Developer</h3>
+        <span>2024 – Today</span>
+        <p>Current job at Terna Rete Italia.</p>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+  </section>
+
+  <section id="projects" class="section snap">
+    <h2 class="reveal">Projects</h2>
+    <div id="project-list"></div>
+    <p1>Here you can find the projects I'm currently working in as a freelancer.</p1>
+    <p2>⚙️ Work in progress ...</p2>
+  </section>
+
+<section id="contact" class="section snap">
+  <h2 class="reveal">Contact</h2>
+  <p class="reveal">
+    Email me at:
+    <a href="mailto:ludovicaricccardibenedetta98@gmail.com"
+       id="email"
+       class="click-to-copy">ludovica@example.com</a>
+    <span id="copy-msg" class="copied-msg">📋Copied!</span>
+  </p>
+</section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Ludovica</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
