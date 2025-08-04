@@ -28,6 +28,26 @@ body {
   color: var(--text-color);
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--bg-color, white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.hamburger,
+.menu-toggle {
+  display: none;
+}
+
+
 nav.nav {
   background-image: var(--nav-bg);
 }
@@ -576,4 +596,51 @@ nav.nav > * {
   #contact a.email-highlight {
     font-size: 1rem;
   }
-}
+
+
+  /* Mostra hamburger solo su mobile */
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0.5rem;
+  }
+
+  /* Checkbox visibile solo per controllare il menu */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+  /* Nascondi il menu su mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    padding-left: 0;
+  }
+
+  /* Mostra il menu se il checkbox è selezionato */
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+
+  /* Opzionale: stile mobile */
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  }
+
+
