@@ -417,6 +417,14 @@ body.dark .timeline .entry.right .dot {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+.section-title-image {
+  width: 300px;
+  max-width: 90%;
+  margin: 0 0 2rem 0;
+  display: block;
+}
+
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
@@ -555,6 +563,10 @@ nav.nav > * {
 
 /*MOBILE RESPONSIVE*/
 @media screen and (max-width: 768px) {
+
+  .section-title-image {
+    margin: 0 0 2rem 1rem; /* allinea a sinistra su schermi grandi */
+  }
   .timeline {
     padding: 1rem;
     margin-left: 1rem;
