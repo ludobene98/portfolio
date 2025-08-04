@@ -59,9 +59,7 @@ nav .logo,
   text-shadow: var(--link-shadow);
 }
 
-.footer {
-  color: var(--footer-color);
-}
+
 
 /* NAVBAR */
 nav.nav {
@@ -390,11 +388,23 @@ body.dark .timeline .entry.right .dot {
 
 
 /* FOOTER */
+
 .footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
+  color: var(--footer-color);
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: var(--bg-color); /* per contrasto */
+  z-index: 10;
+}
+
 
 /* COLORI SEZIONI LIGHT */
 #about {
