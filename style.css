@@ -186,11 +186,13 @@ nav ul li a.active::after {
   min-height: 100vh;
   padding: 6rem 2rem 2rem;
   scroll-snap-align: start;
+  padding-top: 120px; /* evita che i titoli finiscano sotto la navbar */
 }
 
 .section h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
+  scroll-margin-top: 100px;
 }
 
 .section p {
@@ -390,10 +392,6 @@ body.dark .timeline .entry.right .dot {
 /* FOOTER */
 
 .footer {
-  color: var(--footer-color);
-}
-
-.footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -403,21 +401,27 @@ body.dark .timeline .entry.right .dot {
   font-size: 0.9rem;
   background-color: var(--bg-color); /* per contrasto */
   z-index: 10;
+    /* Per evitare sovrapposizioni con tastiera su mobile */
+  pointer-events: none;
+  user-select: none;
 }
 
 
 /* COLORI SEZIONI LIGHT */
 #about {
   background-color: #E6DAF5;
+  padding-top: 160px; /* aumenta per compensare la navbar */
 }
 
 #projects {
   background-color: #BFA2DB;
+  padding-top: 160px; /* aumenta per compensare la navbar */
 }
 
 #contact {
   background-color: #6C5B7B;
   color: #ffffff;
+  padding-top: 160px; /* aumenta per compensare la navbar */
 }
 
 /* ANIMAZIONI */
@@ -659,8 +663,10 @@ nav.nav > * {
   }
 
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
   }
 
   .timeline::before {
