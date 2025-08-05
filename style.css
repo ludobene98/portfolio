@@ -10,6 +10,9 @@ body, html {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100%;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* VARIABILI LIGHT MODE */
@@ -156,10 +159,10 @@ nav ul li a.active::after {
   transform: translateX(24px);
 }
 
-/* HERO */
+/*SEZIONE HERO*/
 .hero {
   height: 100vh;
-  background-image: url('img/background-hero.jpg');
+  background-image: url('img/herobackanimated.gif');
   background-size: cover;
   background-position: center;
   scroll-snap-align: start;
@@ -205,6 +208,36 @@ nav ul li a.active::after {
 }
 
 /* ABout me section */
+#about {
+  position: relative;
+  overflow: visible; /* importante: lascia crescere la sezione in altezza */
+  padding: 2rem;
+  scroll-snap-align: start;
+}
+
+/* contenitore visivo per la GIF */
+.gif-container {
+  position: relative;
+  height: 100vh; /* limita visivamente la GIF */
+  overflow: hidden;
+}
+
+/* posizionamento assoluto della gif dentro solo alla parte alta */
+.gif-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10rem;
+  z-index: 10;
+}
+
+.gif-top-right img {
+  max-width: 300px;
+  height: auto;
+}
+
+
+/* timeline */
 .timeline {
   position: relative;
   margin: 4rem auto;
@@ -388,6 +421,31 @@ body.dark .timeline .entry.right .dot {
   color: white;
 }
 
+/* contact */
+#contact {
+  position: relative;
+  padding: 2rem;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.gif-right-stack {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+  padding: 10rem;
+  z-index: 5;
+  padding-top: 200px;
+}
+
+.gif-right-stack img {
+  max-width: 350px;
+  height: auto;
+}
+
 
 /* FOOTER */
 
@@ -416,6 +474,11 @@ body.dark .timeline .entry.right .dot {
 #projects {
   background-color: #BFA2DB;
   padding-top: 160px; /* aumenta per compensare la navbar */
+  position: relative;
+  padding: 2rem;
+  padding-top: 150px;
+  overflow: hidden;
+  scroll-snap-align: start;
 }
 
 #contact {
@@ -672,6 +735,14 @@ nav.nav > * {
   .timeline::before {
   left: 29px; /* o 0px, per allinearlo esattamente ai pallini */
 }
+
+  .gif-right-stack {
+    display: none;
+  }
+
+    .gif-top-right {
+    display: none;
+  }
 
   }
 
